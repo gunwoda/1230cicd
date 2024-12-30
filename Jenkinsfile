@@ -14,6 +14,11 @@ pipeline {
 //                 git branch: 'main', url: 'https://github.com/gunwoda/1230cicd.git'
 //             }
 //         }
+        stage("permission"){
+             steps{
+                 sh "chmod +x ./gradlew"
+             }
+         }
 
         stage('Set Tag') {
             steps {
