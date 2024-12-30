@@ -40,7 +40,7 @@ pipeline {
         stage('Docker Login') {
             steps {
                 // Jenkins Credentials를 사용하여 Docker Hub에 로그인
-                withCredentials([usernamePassword(credentialsId: 'dockerhub-id', usernameVariable: 'username', passwordVariable: 'token')]) {
+                withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'username', passwordVariable: 'token')]) {
                     sh "echo ${token} | docker login -u ${username} --password-stdin"
                 }
             }
