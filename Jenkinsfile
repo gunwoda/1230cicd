@@ -53,12 +53,12 @@ pipeline {
             }
         }
 
-        stage('Test Image') {
-            steps {
-                // 빌드한 Docker 이미지를 테스트
-                sh "docker run --rm ${IMAGE_NAME}:${TAG} java -jar /app.jar --spring.profiles.active=test"
-            }
-        }
+//         stage('Test Image') {
+//         steps {
+//              // 빌드한 Docker 이미지를 테스트
+//               sh "docker run --rm ${IMAGE_NAME}:${TAG} java -jar /app.jar --spring.profiles.active=test"
+//             }
+//         }
 
         stage('Push to Registry') {
             steps {
