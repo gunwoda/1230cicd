@@ -40,7 +40,7 @@ pipeline {
         stage('Docker Login') {
             steps {
                 // Docker Registry 로그인
-                sh "echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin"
+                sh "echo ${DOCKERHUB_TOKEN} | docker login -u ${DOCKER_USERNAME} --password-stdin"
             }
         }
 
